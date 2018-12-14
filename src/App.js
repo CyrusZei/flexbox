@@ -1,26 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+const RootContainer = styled.div`
+  display: flex;
+  background-color: #ff0000;
+  height: 100vh;
+  flex-direction: column;
+`;
+
+const TopNav = styled.div`
+  background-color: #00ff00;
+  height: 80px;
+`;
+
+const LeftNav = styled.div`
+  width: 100px;
+  background-color: #0000ff;
+`;
+
+const ContentContainer = styled.div`
+  flex: 1;
+  background-color: #f0f0f0;
+  display: flex;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
+  background-color: #00ffff;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <RootContainer>
+        <TopNav>Top NavBar</TopNav>
+        <ContentContainer>
+          <LeftNav />
+          <MainContent />
+        </ContentContainer>
+      </RootContainer>
     );
   }
 }
